@@ -1,4 +1,4 @@
-import JsValue from "./0203/1.jsx/JsValue";
+import JsValue from './0203/1.jsx/JsValue'
 
 function App() {
   return (
@@ -7,4 +7,4 @@ function App() {
     </>
   )
 }
-  export default App;
+export default App
