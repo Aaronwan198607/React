@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  //strictMode嚴格模式
+  //react內建的檢查工具,目的是要為了檢查在"開發過程中".應用程式有沒有遣在的問題
+
   <React.StrictMode>
     <App />
   </React.StrictMode>
