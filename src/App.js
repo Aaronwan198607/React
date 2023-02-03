@@ -8,5 +8,5 @@ function App() {
   )
 }
 
-我好棒
+我好可憐
 export default App
