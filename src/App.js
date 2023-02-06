@@ -1,10 +1,10 @@
 // import Student from "./0206/4.jsx-map範例-2-json檔案導入/0206/3.map/Student";
-import ProductTable from "./0206/5.練習題-map/ProductTable";
+import List from './0206/6.updating-array/List'
 
 function App() {
   return (
     <>
-      <ProductTable />
+      <List />
   </>
 )
 }

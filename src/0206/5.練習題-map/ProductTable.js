@@ -4,7 +4,7 @@ import products from './data/products.json'
 function ProductTable() {
   return (
     <>
-      <table></table>
+      <table>
         <thead>
           <tr>
             <th>ID</th>
