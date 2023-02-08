@@ -1,10 +1,10 @@
 // import Student from "./0206/4.jsx-map範例-2-json檔案導入/0206/3.map/Student";
-import BookList from "./0208/4-0.練習題-加入收藏/BookList"
+import ShoppingCart from "./0208/5-0.練習題-小型購物車/ShoppingCart"
 
 function App() {
   return (
     <>
-      <BookList />
+      <ShoppingCart />
     </>
   )
 }
