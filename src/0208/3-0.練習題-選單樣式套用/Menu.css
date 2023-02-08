@@ -12,7 +12,7 @@ ul li a{
 }
 
 ul li a:hover{
-    background-color: red;
+    background-color: yellow;
     color: #fff;
 }
 
