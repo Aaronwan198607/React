@@ -1,10 +1,10 @@
 // import Student from "./0206/4.jsx-map範例-2-json檔案導入/0206/3.map/Student";
-import Menu from "./0208/3-0.練習題-選單樣式套用/Menu"
+import BookList from "./0208/4-0.練習題-加入收藏/BookList"
 
 function App() {
   return (
     <>
-      <Menu />
+      <BookList />
     </>
   )
 }
