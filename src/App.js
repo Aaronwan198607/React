@@ -1,4 +1,4 @@
-import Parent from './0210/1.props/parents'
+import Parent from './0210/1.props/Parents'
 function App() {
   return (
     <>
