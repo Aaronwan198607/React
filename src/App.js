@@ -1,8 +1,8 @@
-import Parent from "./0210/3-1.p-c傳遞資料/Parent"
+import TodoApp from "./0210/4-1.練習題-todo-操作介面/0210/3.todo/TodoApp"
 function App() {
   return (
     <>
-      <Parent />
+      <TodoApp />
     </>
   )
 }
