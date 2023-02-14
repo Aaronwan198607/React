@@ -1,8 +1,8 @@
-import TodoApp from './0214/0214/1-1.練習題-todo-使用資料夾區分元件/TodoApp'
+import GrandParent from './0214/3-1.context基本範例/GrandParent'
 function App() {
   return (
     <>
-      <TodoApp />
+      <GrandParent />
     </>
   )
 }

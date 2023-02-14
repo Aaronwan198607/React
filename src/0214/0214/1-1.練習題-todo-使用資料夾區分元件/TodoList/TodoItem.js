@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './TodoApp.css'
 function TodoItem(props) {
   const { id, completed, text, handleDeleteTodo, handleToggleCompleted } = props
 

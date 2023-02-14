@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import './TodoApp.css'
+import './TodoList/Todo.css'
 import AddForm from './AddForm'
+
 // 下面兩者同義(導入某資料夾 = 導入某資料夾的index.js)
 // import TodoList from './TodoList/index'
-import TodoList from './TodoList'
+import TodoList from '.'
 
 function TodoApp() {
   // 文字輸入框用
@@ -24,6 +25,10 @@ function TodoApp() {
     },
   ])
 
+  const filterOptions = ['所有', '進行中', '已完成']
+
+  const [myFilter, setMyFilter] = useState('進行中')
+
   const toggleCompleted = (todos, id) => {
     return todos.map((v, i) => {
       // 用條件判斷是否為id=傳入id值，是的話回傳拷貝+修改過的新物件
@@ -38,9 +43,15 @@ function TodoApp() {
       return v.id !== id
     })
   }
-
   const addTodo = (todos, todo) => {
     return [todo, ...todos]
+  }
+
+  const getFilterTodos = (todos, type) => {
+    if (type === '進行中') return todos.filter((v) => !v.completed)
+    if (type === '已完成') return todos.filter((v) => v.completed)
+
+    return todos
   }
 
   const createTodo = (text) => {
@@ -48,6 +59,7 @@ function TodoApp() {
       id: Number(new Date()),
       text: text,
       completed: false,
+      editing: false,
     }
   }
   // 專門要給AddForm用的
@@ -62,17 +74,32 @@ function TodoApp() {
   }
 
   return (
-    <>
+    <hr>
       <h1>待辨事項</h1>
       <AddForm handleAddTodo={handleAddTodo} />
       <hr />
       <TodoList
-        todos={todos}
+        todos={getFilterTodos(todos, myFilter)}
         handleDeleteTodo={handleDeleteTodo}
         handleToggleCompleted={handleToggleCompleted}
       />
-    </>
+      <hr />
+      {filterOptions.map((v, i) => {
+        return (
+          <button
+            key={i}
+            className={
+              v === myFilter ? 'filter-button-active' : 'filter-button-normal'
+            }
+            nClick={() => {
+              setMyFilter(v)
+            }}
+          >
+            {v}
+          </button>
+        )
+      })}
+    </hr>
   )
 }
-
 export default TodoApp
