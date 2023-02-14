@@ -1,11 +1,16 @@
 import { useState } from 'react'
-import TodoList from '../../../../0214/0214/1-1.練習題-todo-使用資料夾區分元件/TodoList'
 import './TodoApp.css'
+import AddForm from './AddForm'
+// 下面兩者同義(導入某資料夾 = 導入某資料夾的index.js)
+// import TodoList from './TodoList/index'
+import TodoList from './TodoList'
 
 function TodoApp() {
-  //文字輸入框 ↓
-  const [inputVaule, setInputVaule] = useState('')
+  // 文字輸入框用
+  // const [inputValue, setInputValue] = useState('')
 
+  // 列表用
+  // ex. todo = { id, text, completed }
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -14,12 +19,10 @@ function TodoApp() {
     },
     {
       id: 2,
-      text: '學React',
+      text: '學react',
       completed: true,
     },
   ])
-
-  const [myFilter, setMyFilter] = useState('進行中的代辦')
 
   const toggleCompleted = (todos, id) => {
     return todos.map((v, i) => {
@@ -29,14 +32,17 @@ function TodoApp() {
       else return { ...v }
     })
   }
+
   const deleteTodo = (todos, id) => {
     return todos.filter((v, i) => {
       return v.id !== id
     })
   }
+
   const addTodo = (todos, todo) => {
     return [todo, ...todos]
   }
+
   const createTodo = (text) => {
     return {
       id: Number(new Date()),
@@ -44,10 +50,11 @@ function TodoApp() {
       completed: false,
     }
   }
+  // 專門要給AddForm用的
   const handleAddTodo = (text) => {
     setTodos(addTodo(todos, createTodo(text)))
   }
-  const handlToggleCompleted = (id) => {
+  const handleToggleCompleted = (id) => {
     setTodos(toggleCompleted(todos, id))
   }
   const handleDeleteTodo = (id) => {
@@ -57,18 +64,15 @@ function TodoApp() {
   return (
     <>
       <h1>待辨事項</h1>
-      <AddFrom handleAddTodo={handleAddTodo} />
+      <AddForm handleAddTodo={handleAddTodo} />
       <hr />
       <TodoList
         todos={todos}
         handleDeleteTodo={handleDeleteTodo}
-        handlToggleCompleted={handlToggleCompleted}
+        handleToggleCompleted={handleToggleCompleted}
       />
-      <hr />
-      <button className="filter-button-normal">所有</button>
-      <button className="filter-button-active">進行中的代辦</button>
-      <button>已完成</button>
     </>
   )
 }
+
 export default TodoApp
