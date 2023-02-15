@@ -1,8 +1,10 @@
-import HTML5Form from './0215/1-2.可控表單元件-select/HTML5Form'
+import IdForm from './0215/2-1_refs範例-介面/IdForm'
+import RefsFrom from './0215/2-1_refs範例-介面/RefsForm'
 function App() {
   return (
     <>
-      <HTML5Form />
+      <IdForm />
+      <RefsFrom />
     </>
   )
 }
