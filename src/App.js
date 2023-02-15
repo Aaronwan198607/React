@@ -1,10 +1,8 @@
-import IdForm from './0215/2-1_refs範例-介面/IdForm'
-import RefsFrom from './0215/2-1_refs範例-介面/RefsForm'
+import RegisterForm from './0215/3-1.表單驗証-註冊表單介面/RegisterForm'
 function App() {
   return (
     <>
-      <IdForm />
-      <RefsFrom />
+      <RegisterForm />
     </>
   )
 }
