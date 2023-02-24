@@ -1,8 +1,8 @@
-import RegisterForm from './0215/3-1.表單驗証-註冊表單介面/RegisterForm'
+import User from './0224/2-1.練習題-在畫面上呈現學生資料表格/User'
 function App() {
   return (
     <>
-      <RegisterForm />
+      <User />
     </>
   )
 }
